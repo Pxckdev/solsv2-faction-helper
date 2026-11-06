@@ -41,7 +41,7 @@ const TIERS = {
   all: { name: 'All guns', short: 'ALL',  sub: 'Everything on the wheel' },
 };
 
-const img = (w) => `weapons/images/${w.id}.png`;
+const img = (w) => `${w.id}.png`;
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const poolFor = (tier) => (tier === 'all' ? WEAPONS : WEAPONS.filter((w) => w.tier === tier));
 const $ = (id) => document.getElementById(id);

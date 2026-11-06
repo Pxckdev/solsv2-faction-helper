@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sols Weapon Wheel</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="topbar-logo" href="#top"><img src="logo.png" alt="Sols"></a>
+    <nav class="topbar-nav">
+      <a href="#wheel">Wheel</a>
+      <a href="#catalog">Catalog</a>
+      <button class="btn btn-small" id="soundBtn" type="button" aria-pressed="true">Sound: on</button>
+    </nav>
+  </header>
+
+  <main class="page" id="top">
+
+    <section class="hero">
+      <span class="badge">FACTION ARMORY</span>
+      <h1 class="title">Sols Weapon Wheel</h1>
+      <p class="tagline">Pick a tier, set your rolls, and let the wheel decide what you're pulling out with.</p>
+    </section>
+
+    <div class="lights" aria-hidden="true"></div>
+
+    <section class="card" id="wheel">
+      <h2 class="section-title">Choose a tier</h2>
+      <div class="tiers" id="tiers"></div>
+
+      <div class="reel" id="reel">
+        <div class="reel-strip" id="strip"></div>
+        <div class="reel-marker" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <div class="stepper">
+          <button type="button" id="minus" aria-label="Fewer rolls">–</button>
+          <span id="count">1</span>
+          <button type="button" id="plus" aria-label="More rolls">+</button>
+        </div>
+        <div class="quick" id="quick"></div>
+        <button type="button" class="btn btn-primary roll" id="rollBtn">ROLL 1×</button>
+      </div>
+    </section>
+
+    <section class="card" id="landed-card">
+      <div class="landed-head">
+        <div>
+          <h2 class="section-title">Landed guns</h2>
+          <p class="muted" id="landedSub">Nothing rolled yet.</p>
+        </div>
+        <button type="button" class="btn btn-small" id="clearBtn">Clear</button>
+      </div>
+      <div class="grid landed" id="landed"></div>
+    </section>
+
+    <section class="card" id="catalog">
+      <div class="landed-head">
+        <div>
+          <h2 class="section-title">Weapon catalog</h2>
+          <p class="muted">Every gun on the wheel. Tap a card to copy its spawn name.</p>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Search weapons…" aria-label="Search weapons">
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="catalogGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <img src="logo.png" alt="">
+    <p>Sols Faction · Weapon Wheel</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

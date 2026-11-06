@@ -32,6 +32,33 @@ const WEAPONS = [
   { id: 'WEAPON_GREEDWOODDRAC', label: 'Green Wood Drac',                 ammo: 'ammo-rifle2',  weight: 1020, tier: 't2' },
   { id: 'WEAPON_RWDRF',         label: 'Red Wood Drac',                   ammo: 'ammo-rifle2',  weight: 1020, tier: 't2' },
   { id: 'WEAPON_TTISBM4',       label: 'TTI Super B-M4',                  ammo: 'ammo-shotgun', weight: 2500, tier: 't2' },
+
+  // ===== Echo Windy City pack + HK45 (from ox_inventory weapons.lua) =====
+  { id: 'WEAPON_HK45',          label: 'HK45',                            ammo: 'ammo-45',      weight: 700,  tier: 't1', ext: 'none' },
+  { id: 'WEAPON_CALLOUS',       label: '1911',                            ammo: 'ammo-45',      weight: 1100, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_CANIK',         label: 'Canik TP9',                       ammo: 'ammo-9',       weight: 1130, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_CPT',           label: 'Glock 45',                        ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_DCOMB',         label: 'Glock 19x',                       ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_FFN',           label: 'FN 57 (.45)',                     ammo: 'ammo-45',      weight: 1100, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_G17G5',         label: 'Glock 17 Gen 5',                  ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'none' },
+  { id: 'WEAPON_G19G',          label: 'Glock 19X (Taped)',               ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_G43G',          label: 'Glock 43',                        ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_G233',          label: 'Glock 23',                        ammo: 'ammo-45',      weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_G45S',          label: 'G45',                             ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'none' },
+  { id: 'WEAPON_MGLOCK19',      label: 'Glock 19X (Alt)',                 ammo: 'ammo-9',       weight: 1130, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_OLIVE17',       label: 'Olive Glock 17',                  ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_OLIVEG19',      label: 'Olive G19x',                      ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_P88P',          label: 'Walther P88',                     ammo: 'ammo-9',       weight: 1130, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_SIGCB',         label: 'Sig P320',                        ammo: 'ammo-45',      weight: 785,  tier: 't1', ext: 'none' },
+  { id: 'WEAPON_43MOS',         label: 'Glock 43 MOS',                    ammo: 'ammo-9',       weight: 1100, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_45MOS',         label: 'Glock 45 MOS',                    ammo: 'ammo-9',       weight: 1100, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_FN',            label: 'FN 57 (.50)',                     ammo: 'ammo-50',      weight: 1100, tier: 't1', ext: 'webp' },
+  { id: 'WEAPON_FNX45',         label: 'FNX 45',                          ammo: 'ammo-45',      weight: 1100, tier: 't1', ext: 'webp' },
+
+  { id: 'WEAPON_19SWITCH',      label: 'G with a Switch',                 ammo: 'ammo-9',       weight: 1100, tier: 't15', ext: 'webp' },
+  { id: 'WEAPON_AP3',           label: 'Glock 19 with a Switch',          ammo: 'ammo-9',       weight: 1100, tier: 't15', ext: 'webp' },
+  { id: 'WEAPON_G26S',          label: 'G26 with a Switch',               ammo: 'ammo-9',       weight: 1100, tier: 't15', ext: 'webp' },
+  { id: 'WEAPON_G205',          label: 'G20 Switch',                      ammo: 'ammo-9',       weight: 1100, tier: 't15', ext: 'webp' },
 ];
 
 const TIERS = {
@@ -41,7 +68,8 @@ const TIERS = {
   all: { name: 'All guns', short: 'ALL',  sub: 'Everything on the wheel' },
 };
 
-const img = (w) => `${w.id}.png`;
+// guns with ext: 'none' have no picture yet, so they show the Sols logo instead
+const img = (w) => (w.ext === 'none' ? 'favicon.png' : `${w.id}.${w.ext || 'png'}`);
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const poolFor = (tier) => (tier === 'all' ? WEAPONS : WEAPONS.filter((w) => w.tier === tier));
 const $ = (id) => document.getElementById(id);

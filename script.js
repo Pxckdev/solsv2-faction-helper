@@ -3,35 +3,35 @@
 const WEAPONS = [
   { id: 'WEAPON_G17CGEN5PT',    label: 'G17C Gen 5',                      ammo: 'ammo-9',       weight: 850,  tier: 't1' },
   { id: 'WEAPON_G17G6C',        label: 'G17 Gen 6 Custom',                ammo: 'ammo-9',       weight: 540,  tier: 't1' },
-  { id: 'WEAPON_G21G4C',        label: 'G21 Gen 4 Custom',                ammo: 'ammo-45',      weight: 1020, tier: 't1' },
+  { id: 'WEAPON_G21G4C',        label: 'G21 Gen 4 Custom',                ammo: 'ammo-45',      weight: 1020, tier: 't15' },
   { id: 'WEAPON_G20VPT',        label: 'G20V Performance Trigger',        ammo: 'ammo-10',      weight: 1050, tier: 't1' },
-  { id: 'WEAPON_19XPT',         label: 'G19X Performance Trigger',        ammo: 'ammo-9',       weight: 850,  tier: 't1' },
+  { id: 'WEAPON_19XPT',         label: 'G19X Performance Trigger',        ammo: 'ammo-9',       weight: 850,  tier: 't15' },
 
-  { id: 'WEAPON_G21G4GSP',      label: 'G21 Gen 4 Gold Switch',           ammo: 'ammo-45',      weight: 1220, tier: 't15' },
-  { id: 'WEAPON_G47G5BS',       label: 'G47 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1150, tier: 't15' },
-  { id: 'WEAPON_G45G5BS',       label: 'G45 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1070, tier: 't15' },
-  { id: 'WEAPON_G4G4GB',        label: 'G34 Gen 4 Gold Switch',           ammo: 'ammo-9',       weight: 1150, tier: 't15' },
+  { id: 'WEAPON_G21G4GSP',      label: 'G21 Gen 4 Gold Switch',           ammo: 'ammo-45',      weight: 1220, tier: 't2' },
+  { id: 'WEAPON_G47G5BS',       label: 'G47 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1150, tier: 't2' },
+  { id: 'WEAPON_G45G5BS',       label: 'G45 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1070, tier: 't2' },
+  { id: 'WEAPON_G4G4GB',        label: 'G34 Gen 4 Gold Switch',           ammo: 'ammo-9',       weight: 1150, tier: 't2' },
   { id: 'WEAPON_G41G4PS',       label: 'G41 Gen 4 Pink Switch',           ammo: 'ammo-45',      weight: 1350, tier: 't15' },
   { id: 'WEAPON_23GEN4OB',      label: 'G23C Gen 4 Orange Switch',        ammo: 'ammo-40',      weight: 659,  tier: 't15' },
-  { id: 'WEAPON_G31CG4BS',      label: 'G31C Gen 4 Black Switch',         ammo: 'ammo-357s',    weight: 750,  tier: 't15' },
-  { id: 'WEAPON_G34G5BS',       label: 'G34 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1250, tier: 't15' },
-  { id: 'WEAPON_M20G4',         label: 'Mythical G20 Gen 4 (Switch)',     ammo: 'ammo-10',      weight: 1050, tier: 't15' },
-  { id: 'WEAPON_G17G5GB',       label: 'G17 Gen 5 Green Switch',          ammo: 'ammo-9',       weight: 970,  tier: 't15' },
-  { id: 'WEAPON_WG19XGB',       label: 'White G19X Gold Switch',          ammo: 'ammo-9',       weight: 850,  tier: 't15' },
-  { id: 'WEAPON_G22G5IS',       label: 'G22 Gen 5 Iridescent Switch',     ammo: 'ammo-40',      weight: 1020, tier: 't15' },
+  { id: 'WEAPON_G31CG4BS',      label: 'G31C Gen 4 Black Switch',         ammo: 'ammo-357s',    weight: 750,  tier: 't2' },
+  { id: 'WEAPON_G34G5BS',       label: 'G34 Gen 5 Blue Switch',           ammo: 'ammo-9',       weight: 1250, tier: 't2' },
+  { id: 'WEAPON_M20G4',         label: 'Mythical G20 Gen 4 (Switch)',     ammo: 'ammo-10',      weight: 1050, tier: 't2' },
+  { id: 'WEAPON_G17G5GB',       label: 'G17 Gen 5 Green Switch',          ammo: 'ammo-9',       weight: 970,  tier: 't2' },
+  { id: 'WEAPON_WG19XGB',       label: 'White G19X Gold Switch',          ammo: 'ammo-9',       weight: 850,  tier: 't2' },
+  { id: 'WEAPON_G22G5IS',       label: 'G22 Gen 5 Iridescent Switch',     ammo: 'ammo-40',      weight: 1020, tier: 't2' },
   { id: 'WEAPON_G30SRB',        label: 'G30S Red Switch',                 ammo: 'ammo-45',      weight: 750,  tier: 't15' },
 
-  { id: 'WEAPON_SSMARP',        label: 'SS Micro AR-Pistol',              ammo: 'ammo-rifle',   weight: 675,  tier: 't2' },
-  { id: 'WEAPON_4ARPSPIDERMAN', label: 'SS 4 Inch AR-Pistol Spiderman',   ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
-  { id: 'WEAPON_4RSARP',        label: 'Red Skeletonized Baby AR-Pistol', ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
+  { id: 'WEAPON_SSMARP',        label: 'SS Micro AR-Pistol',              ammo: 'ammo-rifle',   weight: 675,  tier: 't15' },
+  { id: 'WEAPON_4ARPSPIDERMAN', label: 'SS 4 Inch AR-Pistol Spiderman',   ammo: 'ammo-rifle',   weight: 1020, tier: 't15' },
+  { id: 'WEAPON_4RSARP',        label: 'Red Skeletonized Baby AR-Pistol', ammo: 'ammo-rifle',   weight: 1020, tier: 't15' },
   { id: 'WEAPON_P4INCHSS',      label: 'Purple SS AR-Pistol (4 Inch)',    ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
   { id: 'WEAPON_PW4ARP',        label: 'Peach White AR-Pistol 4 Inch',    ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
   { id: 'WEAPON_GC4IARP',       label: 'Camo SS AR-Pistol (4 Inch)',      ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
-  { id: 'WEAPON_FSAR15',        label: 'Full Size AR-15',                 ammo: 'ammo-rifle',   weight: 1020, tier: 't2' },
+  { id: 'WEAPON_FSAR15',        label: 'Full Size AR-15',                 ammo: 'ammo-rifle',   weight: 1020, tier: 't15' },
   { id: 'WEAPON_FULLYPAPBD',    label: 'Fully Pap Black',                 ammo: 'ammo-rifle2',  weight: 2020, tier: 't2' },
   { id: 'WEAPON_GREEDWOODDRAC', label: 'Green Wood Drac',                 ammo: 'ammo-rifle2',  weight: 1020, tier: 't2' },
-  { id: 'WEAPON_RWDRF',         label: 'Red Wood Drac',                   ammo: 'ammo-rifle2',  weight: 1020, tier: 't2' },
-  { id: 'WEAPON_TTISBM4',       label: 'TTI Super B-M4',                  ammo: 'ammo-shotgun', weight: 2500, tier: 't2' },
+  { id: 'WEAPON_RWDRF',         label: 'Red Wood Drac',                   ammo: 'ammo-rifle2',  weight: 1020, tier: 't15' },
+  { id: 'WEAPON_TTISBM4',       label: 'TTI Super B-M4',                  ammo: 'ammo-shotgun', weight: 2500, tier: 't15' },
 
   // ===== Echo Windy City pack + HK45 (from ox_inventory weapons.lua) =====
   { id: 'WEAPON_CALLOUS',       label: '1911',                            ammo: 'ammo-45',      weight: 1100, tier: 't1' },
@@ -50,13 +50,13 @@ const WEAPONS = [
   { id: 'WEAPON_FN',            label: 'Fabrique Nationale 2.0 ( HP )',                     ammo: 'ammo-hp',      weight: 1100, tier: 't2' },
   { id: 'WEAPON_FNX45',         label: 'FNX 45',                          ammo: 'ammo-45',      weight: 1100, tier: 't15' },
 
-  { id: 'WEAPON_19SWITCH',      label: 'G with a Switch',                 ammo: 'ammo-9',       weight: 1100, tier: 't15' },
+  { id: 'WEAPON_19SWITCH',      label: 'G with a Switch',                 ammo: 'ammo-9',       weight: 1100, tier: 't2' },
   { id: 'WEAPON_AP3',           label: 'Glock 19 with a Switch',          ammo: 'ammo-9',       weight: 1100, tier: 't15' },
-  { id: 'WEAPON_G26S',          label: 'G26 with a Switch',               ammo: 'ammo-9',       weight: 1100, tier: 't15' },
+  { id: 'WEAPON_G26S',          label: 'G26 with a Switch',               ammo: 'ammo-9',       weight: 1100, tier: 't2' },
   { id: 'WEAPON_G205',          label: 'G20 Switch',                      ammo: 'ammo-9',       weight: 1100, tier: 't15' },
 
   // ===== OTD Weapon Pack V1 =====
-  { id: 'WEAPON_FN502TT',       label: 'FN502',                           ammo: 'ammo-45',      weight: 465,  tier: 't15' },
+  { id: 'WEAPON_FN502TT',       label: 'FN502',                           ammo: 'ammo-hb',      weight: 465,  tier: 't15' },
   { id: 'WEAPON_SD40GH',        label: 'SD40',                            ammo: 'ammo-9',       weight: 465,  tier: 't1' },
   { id: 'WEAPON_19XMOS',        label: 'G19X MOS',                        ammo: 'ammo-9',       weight: 465,  tier: 't15' },
   { id: 'WEAPON_G17GG',         label: 'G17G',                            ammo: 'ammo-9',       weight: 465,  tier: 't1' },
@@ -65,7 +65,7 @@ const WEAPONS = [
   { id: 'WEAPON_G19G5XC',       label: 'G19 G5',                          ammo: 'ammo-9',       weight: 465,  tier: 't1' },
   { id: 'WEAPON_FIVESEVEN3',    label: 'Five Seven',                      ammo: 'ammo-50',      weight: 465,  tier: 't2' },
   { id: 'WEAPON_G20SS',         label: 'G20 Switch',                ammo: 'ammo-10',      weight: 465,  tier: 't15' },
-  { id: 'WEAPON_G5SWITCH',      label: 'G19 G5 Switch',                   ammo: 'ammo-9',       weight: 465,  tier: 't2' },
+  { id: 'WEAPON_G5SWITCH',      label: 'G19 G5 Switch',                   ammo: 'ammo-9',       weight: 465,  tier: 't15' },
   { id: 'WEAPON_7VARP',         label: '7 Inch ARP',                      ammo: 'ammo-rifle',   weight: 2000, tier: 't2' },
 ];
 
@@ -73,7 +73,6 @@ const TIERS = {
   t1:  { name: 'Tier 1',   short: 'T1',   sub: 'Stock pistols' },
   t15: { name: 'Tier 1.5', short: 'T1.5', sub: 'Switch pistols' },
   t2:  { name: 'Tier 2',   short: 'T2',   sub: 'ARs, Dracs & shotgun' },
-  all: { name: 'All guns', short: 'ALL',  sub: 'Everything on the wheel' },
 };
 
 // guns with ext: 'none' have no picture yet, so they show the Sols logo instead

@@ -49,7 +49,6 @@ const WEAPONS = [
   { id: 'WEAPON_45MOS',         label: 'Glock 45 MOS',                    ammo: 'ammo-9',       weight: 1100, tier: 't15' },
   { id: 'WEAPON_FN',            label: 'Fabrique Nationale 2.0 ( HP )',                     ammo: 'ammo-hp',      weight: 1100, tier: 't2' },
   { id: 'WEAPON_FNX45',         label: 'FNX 45',                          ammo: 'ammo-45',      weight: 1100, tier: 't15' },
-
   { id: 'WEAPON_19SWITCH',      label: 'G with a Switch',                 ammo: 'ammo-9',       weight: 1100, tier: 't2' },
   { id: 'WEAPON_AP3',           label: 'Glock 19 with a Switch',          ammo: 'ammo-9',       weight: 1100, tier: 't15' },
   { id: 'WEAPON_G26S',          label: 'G26 with a Switch',               ammo: 'ammo-9',       weight: 1100, tier: 't2' },

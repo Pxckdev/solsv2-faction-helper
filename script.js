@@ -37,18 +37,19 @@ const WEAPONS = [
   { id: 'WEAPON_CALLOUS',       label: '1911',                            ammo: 'ammo-45',      weight: 1100, tier: 't1' },
   { id: 'WEAPON_CANIK',         label: 'Canik TP9',                       ammo: 'ammo-9',       weight: 1130, tier: 't1' },
   { id: 'WEAPON_DCOMB',         label: 'Glock 19x',                       ammo: 'ammo-9',       weight: 785,  tier: 't1' },
-  { id: 'WEAPON_FFN',           label: 'Fabrique Nationale ( HP )',                     ammo: 'ammo-hp',      weight: 1100, tier: 't1' },
+  { id: 'WEAPON_FFN',           label: 'Fabrique Nationale ( HP )',       ammo: 'ammo-hp',      weight: 1100, tier: 't1' },
   { id: 'WEAPON_G17G5',         label: 'Glock 17 Gen 5',                  ammo: 'ammo-9',       weight: 785,  tier: 't1', ext: 'none' },
   { id: 'WEAPON_G19G',          label: 'Glock 19X (Taped)',               ammo: 'ammo-9',       weight: 785,  tier: 't1' },
   { id: 'WEAPON_G43G',          label: 'Glock 43',                        ammo: 'ammo-9',       weight: 785,  tier: 't1' },
   { id: 'WEAPON_G233',          label: 'Glock 23',                        ammo: 'ammo-45',      weight: 785,  tier: 't1' },
-  { id: 'WEAPON_MGLOCK19',      label: 'MGlock 19X',                 ammo: 'ammo-9',       weight: 1130, tier: 't15' },
+  { id: 'WEAPON_MGLOCK19',      label: 'MGlock 19X',                      ammo: 'ammo-9',       weight: 1130, tier: 't15' },
   { id: 'WEAPON_OLIVE17',       label: 'Olive Glock 17',                  ammo: 'ammo-9',       weight: 785,  tier: 't1' },
   { id: 'WEAPON_OLIVEG19',      label: 'Olive G19x',                      ammo: 'ammo-9',       weight: 785,  tier: 't15' },
   { id: 'WEAPON_43MOS',         label: 'Glock 43 MOS',                    ammo: 'ammo-9',       weight: 1100, tier: 't2' },
   { id: 'WEAPON_45MOS',         label: 'Glock 45 MOS',                    ammo: 'ammo-9',       weight: 1100, tier: 't15' },
-  { id: 'WEAPON_FN',            label: 'Fabrique Nationale 2.0 ( HP )',                     ammo: 'ammo-hp',      weight: 1100, tier: 't2' },
+  { id: 'WEAPON_FN',            label: 'Fabrique Nationale 2.0 ( HP )',   ammo: 'ammo-hp',      weight: 1100, tier: 't2' },
   { id: 'WEAPON_FNX45',         label: 'FNX 45',                          ammo: 'ammo-45',      weight: 1100, tier: 't15' },
+
   { id: 'WEAPON_19SWITCH',      label: 'G with a Switch',                 ammo: 'ammo-9',       weight: 1100, tier: 't2' },
   { id: 'WEAPON_AP3',           label: 'Glock 19 with a Switch',          ammo: 'ammo-9',       weight: 1100, tier: 't15' },
   { id: 'WEAPON_G26S',          label: 'G26 with a Switch',               ammo: 'ammo-9',       weight: 1100, tier: 't2' },
@@ -63,7 +64,7 @@ const WEAPONS = [
   { id: 'WEAPON_DP43X',         label: 'G43X',                            ammo: 'ammo-45',      weight: 465,  tier: 't15' },
   { id: 'WEAPON_G19G5XC',       label: 'G19 G5',                          ammo: 'ammo-9',       weight: 465,  tier: 't1' },
   { id: 'WEAPON_FIVESEVEN3',    label: 'Five Seven',                      ammo: 'ammo-50',      weight: 465,  tier: 't2' },
-  { id: 'WEAPON_G20SS',         label: 'G20 Switch',                ammo: 'ammo-10',      weight: 465,  tier: 't15' },
+  { id: 'WEAPON_G20SS',         label: 'G20 Switch',                      ammo: 'ammo-10',      weight: 465,  tier: 't15' },
   { id: 'WEAPON_G5SWITCH',      label: 'G19 G5 Switch',                   ammo: 'ammo-9',       weight: 465,  tier: 't15' },
   { id: 'WEAPON_7VARP',         label: '7 Inch ARP',                      ammo: 'ammo-rifle',   weight: 2000, tier: 't2' },
 ];
@@ -73,6 +74,8 @@ const TIERS = {
   t15: { name: 'Tier 1.5', short: 'T1.5', sub: 'Switch pistols' },
   t2:  { name: 'Tier 2',   short: 'T2',   sub: 'ARs, Dracs & shotgun' },
 };
+// name for the catalog filter buttons ('all' isn't a wheel tier, so it gets its own label)
+const filterName = (k) => (k === 'all' ? 'All guns' : TIERS[k].name);
 
 // guns with ext: 'none' have no picture yet, so they show the Sols logo instead
 const img = (w) => (w.ext === 'none' ? 'favicon.png' : `${w.id}.${w.ext || 'png'}`);
@@ -104,7 +107,7 @@ function gunHTML(w, { tag = 'div', num = null, win = false } = {}) {
 function renderTiers() {
   $('tiers').innerHTML = Object.entries(TIERS).map(([key, t]) => {
     const pool = poolFor(key);
-    return `<button type="button" class="tier ${key === 'all' ? '' : key}${key === tier ? ' active' : ''}" data-tier="${key}">
+    return `<button type="button" class="tier ${key}${key === tier ? ' active' : ''}" data-tier="${key}">
       <span class="tier-top"><span class="tier-name">${t.name}</span><span class="tier-count">${pool.length} guns</span></span>
       <span class="tier-sub">${t.sub}</span>
       <span class="tier-icons">${pool.slice(0, 5).map((w) => `<img class="${w.tier}" style="--c:var(--${w.tier})" src="${img(w)}" alt="">`).join('')}</span>
@@ -213,7 +216,10 @@ function spinOnce(pool, duration) {
     };
     raf = requestAnimationFrame(tick);
 
+    let finished = false;
     const done = () => {
+      if (finished) return;
+      finished = true;
       cancelAnimationFrame(raf);
       strip.children[WIN].classList.add('win');
       beep(winner.tier === 't2' ? 660 : winner.tier === 't15' ? 560 : 480, 0.25, 0.07, 'triangle');
@@ -221,6 +227,8 @@ function spinOnce(pool, duration) {
       resolve(winner);
     };
     strip.addEventListener('transitionend', done, { once: true });
+    // backup: finish anyway if the browser skips the animation (e.g. tab switched mid-spin)
+    setTimeout(done, duration + 300);
   });
 }
 
@@ -274,8 +282,8 @@ function renderCatalog() {
     ? list.map((w) => gunHTML(w, { tag: 'button' })).join('')
     : '<p class="empty">No weapons match that search.</p>';
 }
-$('chips').innerHTML = ['all', 't1', 't15', 't2']
-  .map((k) => `<button type="button" class="chip${k === filter ? ' active' : ''}" data-f="${k}">${TIERS[k].name} (${poolFor(k).length})</button>`)
+$('chips').innerHTML = ['all', ...Object.keys(TIERS)]
+  .map((k) => `<button type="button" class="chip${k === filter ? ' active' : ''}" data-f="${k}">${filterName(k)} (${poolFor(k).length})</button>`)
   .join('');
 $('chips').addEventListener('click', (e) => {
   const b = e.target.closest('.chip');
